@@ -1,0 +1,39 @@
+import java.util.*;
+class Stack
+{
+    int st[],top,cap;
+    Stack(int c)
+    {
+        cap=c;
+        top=-1;
+        st=new int[cap];
+    }
+    void display()
+    {
+        if(top==-1)
+        System.out.println("Stack underflow");
+        else
+        for(int i=top;i>=0;i--)
+        {
+            System.out.println(st[i]+" ");
+        
+        }
+    }
+    void push(int b)
+    {
+        if(top==cap-1)
+        System.out.println("Stack overflow");
+        else
+        st[++top]=b;
+    }
+    int pop()
+    {
+        if(top==-1)
+        {
+        System.out.println("Stack underflow");
+        return -9999;
+        }
+        else
+        return st[top--];
+    }
+}
